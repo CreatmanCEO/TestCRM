@@ -1,0 +1,11 @@
+<div class="returns-container">
+  <ng-container *ngIf="returns$ | async as returns">
+    <div class="returns-grid">
+      <app-return-card
+        *ngFor="let return of returns"
+        [product]="return"
+        (statusChanged)="onStatusChanged($event)"
+      ></app-return-card>
+    </div>
+  </ng-container>
+</div> 

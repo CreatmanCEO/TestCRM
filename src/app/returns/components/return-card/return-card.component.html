@@ -1,0 +1,39 @@
+<div class="return-card">
+  <div class="return-card__image">
+    <img [src]="product.imageUrl" [alt]="product.name">
+  </div>
+  <div class="return-card__info">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.color }}</p>
+    <p>{{ product.size }}</p>
+    <p>{{ product.quantity }}</p>
+  </div>
+  <div class="return-card__price">
+    <p>Цена закупки за шт.</p>
+    <strong>{{ product.price }} ₽</strong>
+  </div>
+  <div class="return-card__supplier">
+    <p>Поставщик</p>
+    <span>{{ product.supplier }}</span>
+  </div>
+  <div class="return-card__actions">
+    <button 
+      class="btn-return"
+      (click)="onReturnClick('returned')"
+      [class.active]="product.returnStatus === 'returned'"
+    >
+      Вернул
+    </button>
+    <button 
+      class="btn-not-return"
+      (click)="onReturnClick('not_returned')"
+      [class.active]="product.returnStatus === 'not_returned'"
+    >
+      Не вернул
+    </button>
+  </div>
+  <app-return-comment 
+    [comment]="product.comment"
+    (commentChanged)="onCommentChanged($event)"
+  ></app-return-comment>
+</div> 

@@ -1,0 +1,26 @@
+.comment-container {
+  margin-top: 1rem;
+  width: 100%;
+
+  .comment-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .comment-input {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+  }
+} 
